@@ -29,5 +29,27 @@
         <item name="android:background">@drawable/button_background</item>
     </style>
 
-    <dimen name="button_min_width">315dp</dimen>
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="fontFamily">DINPro</item>
+        <item name="fontStyle">medium</item>
+        <item name="tabTextAppearance">@style/font_style.white</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabBackground">?selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="button_nav_style" parent="Widget.AppCompat.Button.Borderless">
+        <item name="fontFamily">DINPro</item>
+        <item name="fontStyle">medium</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:textAppearance">@style/font_style.white</item>
+        <item name="android:background">@drawable/transition_to_selected</item>
+    </style>
+
+    <style name="button_nav_style.selected">
+        <item name="android:background">@drawable/button_nav_background_selected</item>
+    </style>
+
+
 </resources>

@@ -9,4 +9,6 @@
     <string name="exception_fragment_name">The fragment %s do not have a name</string>
     <string name="call_to_action">Call to action</string>
     <string name="action_send">Enviar</string>
+    <string name="investment">Investimento</string>
+    <string name="contact">Contato</string>
 </resources>
