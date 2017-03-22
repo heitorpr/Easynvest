@@ -1,0 +1,33 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="font_style" parent="TextAppearance.AppCompat.Body1">
+        <item name="fontFamily">DINPro</item>
+        <item name="fontStyle">regular</item>
+        <item name="android:textSize">@dimen/font_size_body</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="font_style.white">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="button_style" parent="Widget.AppCompat.Button.Borderless">
+        <item name="fontFamily">DINPro</item>
+        <item name="fontStyle">medium</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/button_min_height</item>
+        <item name="android:minWidth">@dimen/button_min_width</item>
+        <item name="android:textAppearance">@style/font_style.white</item>
+        <item name="android:background">@drawable/button_background</item>
+    </style>
+
+    <dimen name="button_min_width">315dp</dimen>
+</resources>

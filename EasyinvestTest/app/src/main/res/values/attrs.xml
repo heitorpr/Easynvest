@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Fonts">
+        <!-- using android's -->
+        <attr name="android:textStyle" />
+
+        <!-- our custom attribute -->
+        <attr name="fontFamily" format="string" />
+        <attr name="fontStyle" format="enum">
+            <enum name="regular" value="0" />
+            <enum name="black" value="1" />
+            <enum name="bold" value="2" />
+            <enum name="light" value="3" />
+            <enum name="medium" value="4" />
+        </attr>
+    </declare-styleable>
+</resources>

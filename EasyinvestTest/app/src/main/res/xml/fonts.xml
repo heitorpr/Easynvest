@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<familyset>
+    <family>
+        <nameset>
+            <name>DINPro</name>
+        </nameset>
+        <fileset>
+            <file>DINPro-Black.otf</file>
+            <file>DINPro-Bold.otf</file>
+            <file>DINPro-Light.otf</file>
+            <file>DINPro-Medium.otf</file>
+            <file>DINPro-Regular.otf</file>
+        </fileset>
+    </family>
+</familyset>
