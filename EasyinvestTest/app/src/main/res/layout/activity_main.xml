@@ -1,11 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="br.heitor.easyinvest.views.activities.MainActivity">
+
+
+    <br.heitor.easyinvest.views.widgets.FontTextInputLayout
+        android:id="@+id/groupTxtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:hintTextAppearance="@style/font_style.label"
+        app:errorTextAppearance="@style/textErrorLabel">
+
+        <br.heitor.easyinvest.views.widgets.FontEditView
+            android:id="@+id/txtEmail"
+            style="@style/font_style.edt_text"
+            android:hint="Nome"
+            android:text="José da Silva Oliveira"
+            android:imeOptions="actionDone"
+            android:drawableRight="@drawable/ic_cancel_black_20dp"
+            android:inputType="textEmailAddress" />
+    </br.heitor.easyinvest.views.widgets.FontTextInputLayout>
+
+    <br.heitor.easyinvest.views.widgets.FontTextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        app:hintTextAppearance="@style/font_style.label">
+
+        <br.heitor.easyinvest.views.widgets.FontEditView
+            style="@style/font_style.edt_text"
+            android:hint="Nome"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress" />
+    </br.heitor.easyinvest.views.widgets.FontTextInputLayout>
 
     <FrameLayout
         android:id="@+id/content"

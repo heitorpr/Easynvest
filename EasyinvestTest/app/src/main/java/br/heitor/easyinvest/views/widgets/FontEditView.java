@@ -3,6 +3,7 @@ package br.heitor.easyinvest.views.widgets;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 
 import br.heitor.easyinvest.R;
@@ -26,13 +27,35 @@ public class FontEditView extends TextInputEditText {
         setTypeface(FontManager.getInstance().get(family, fontStyleEnum));
     }
 
-//    @Override
-//    public void setError(CharSequence error) {
-//        if(Utils.isEmptyOrNull(error)){
-//            setBackgroundResource(R.drawable.edit_background);
-//            return;
-//        }
-//
-//        setBackgroundResource(R.drawable.edit_background_red);
-//    }
+    public void setError(boolean is_error) {
+        int pL = getPaddingLeft();
+        int pT = getPaddingTop();
+        int pR = getPaddingRight();
+        int pB = getPaddingBottom();
+
+        if (is_error) {
+            setBackground(ContextCompat.getDrawable(getContext(), R.drawable.edit_background_error));
+            setPadding(pL, pT, pR, pB);
+            return;
+        }
+
+        setBackground(ContextCompat.getDrawable(getContext(), R.drawable.edit_background));
+        setPadding(pL, pT, pR, pB);
+    }
+
+    public void setSuccess(boolean is_success) {
+        int pL = getPaddingLeft();
+        int pT = getPaddingTop();
+        int pR = getPaddingRight();
+        int pB = getPaddingBottom();
+
+        if (is_success) {
+            setBackground(ContextCompat.getDrawable(getContext(), R.drawable.edit_background_success));
+            setPadding(pL, pT, pR, pB);
+            return;
+        }
+
+        setBackground(ContextCompat.getDrawable(getContext(), R.drawable.edit_background));
+        setPadding(pL, pT, pR, pB);
+    }
 }

@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#498FE1</color>
-    <color name="colorPrimaryDark">#498FE1</color>
+    <color name="colorPrimary">@color/blue</color>
+    <color name="colorPrimaryDark">@color/blue</color>
+    <color name="colorPrimaryLight">@color/lighter_blue</color>
     <color name="colorAccent">#F5A523</color>
 
-    <color name="colorPrimaryLight">#6CA1DE</color>
-    <color name="alpha_dark_grey">#10322A2A</color>
+    <color name="lighter_blue">#6CA1DE</color>
+    <color name="light_blue">#6DA0DF</color>
+    <color name="blue">#498FE1</color>
+
+
+    <color name="lighter_grey">#F6F6F6</color>
+    <color name="light_grey">#EFEEED</color>
+    <color name="medium_grey">#ABABAB</color>
+    <color name="grey">#AFA9A3</color>
+    <color name="dark_grey">#333333</color>
+    <color name="red">#FF1F1F</color>
+
+    <color name="green">#65BD30</color>
+
+    <color name="color_font">@color/dark_grey</color>
+    <color name="color_label">@color/medium_grey</color>
+    <color name="color_edt_text">@color/light_grey</color>
+    <color name="color_edt_text_selected">@color/medium_grey</color>
+    <color name="color_edt_text_error">@color/red</color>
+    <color name="color_edt_text_success">@color/green</color>
 </resources>
