@@ -19,6 +19,13 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="font_style.checkbox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/color_label</item>
+        <item name="android:button">@drawable/checkbox_button</item>
+        <item name="android:padding">9dp</item>
+    </style>
+
     <style name="font_style.edt_text">
         <item name="fontStyle">medium</item>
         <item name="android:layout_width">match_parent</item>
@@ -66,6 +73,4 @@
     <style name="button_nav_style.selected">
         <item name="android:background">@drawable/button_nav_background_selected</item>
     </style>
-
-
 </resources>

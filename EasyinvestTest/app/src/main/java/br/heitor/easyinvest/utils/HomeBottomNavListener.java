@@ -1,22 +1,65 @@
 package br.heitor.easyinvest.utils;
 
+import android.content.Context;
 import android.graphics.drawable.TransitionDrawable;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
 import br.heitor.easyinvest.R;
-import br.heitor.easyinvest.views.widgets.FontTextView;
+import br.heitor.easyinvest.views.fragments.ContactFragment;
+import br.heitor.easyinvest.views.fragments.InvestimentFragment;
 
 public class HomeBottomNavListener implements View.OnClickListener {
+    private FrameLayout content;
+    private AppCompatActivity activity;
 
-    private FontTextView mTextMessage;
     private int selected;
 
-    public HomeBottomNavListener(FontTextView mTextMessage, View selectedView) {
-        this.mTextMessage = mTextMessage;
+    public HomeBottomNavListener(AppCompatActivity activity, FrameLayout content, View selectedView) {
+        this.activity = activity;
+        this.content = content;
         this.selected = selectedView.getId();
 
         selectView(selectedView, 0);
+    }
+
+    @NonNull
+    private static Fragment getFragment(Context ctx, int itemId, FragmentManager fm) {
+        if (itemId == R.id.btnNavInvestment) {
+            Fragment fragment = fm.findFragmentByTag(FragmentNameHelper.getName(ctx, InvestimentFragment.class));
+
+            if (fragment == null) {
+                fragment = new InvestimentFragment();
+                fragment.setArguments(new Bundle());
+            }
+
+            return fragment;
+        }
+
+        Fragment fragment;
+        fragment = fm.findFragmentByTag(FragmentNameHelper.getName(ctx, ContactFragment.class));
+
+        if (fragment == null) {
+            fragment = new ContactFragment();
+            fragment.setArguments(new Bundle());
+        }
+
+        return fragment;
+    }
+
+    public void openFirstFragment() {
+        FragmentManager fm = activity.getSupportFragmentManager();
+        Fragment fragment = getFragment(activity, R.id.btnNavInvestment, fm);
+        String name = FragmentNameHelper.getName(activity, fragment.getClass());
+        fragment.setHasOptionsMenu(true);
+
+        ActivityUtils.moveFragment(fragment, fm, content.getId(), name);
     }
 
     @Override
@@ -25,14 +68,21 @@ public class HomeBottomNavListener implements View.OnClickListener {
         selected = v.getId();
 
         if (v.getId() == R.id.btnNavInvestment) {
-            mTextMessage.setText(R.string.title_home);
+            FragmentManager fm = activity.getSupportFragmentManager();
+            Fragment fragment = getFragment(activity, v.getId(), fm);
+            String name = FragmentNameHelper.getName(activity, fragment.getClass());
+
+            ActivityUtils.moveFragment(fragment, fm, content.getId(), name);
             selectView(v, 200);
             return;
         }
 
         if (v.getId() != R.id.btnNavContact) return;
+        FragmentManager fm = activity.getSupportFragmentManager();
+        Fragment fragment = getFragment(activity, v.getId(), fm);
+        String name = FragmentNameHelper.getName(activity, fragment.getClass());
 
-        mTextMessage.setText(R.string.title_dashboard);
+        ActivityUtils.moveFragment(fragment, fm, content.getId(), name);
         selectView(v, 200);
     }
 

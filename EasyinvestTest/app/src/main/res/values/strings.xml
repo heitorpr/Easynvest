@@ -11,4 +11,7 @@
     <string name="action_send">Enviar</string>
     <string name="investment">Investimento</string>
     <string name="contact">Contato</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
