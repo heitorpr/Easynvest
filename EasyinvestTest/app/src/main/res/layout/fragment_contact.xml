@@ -1,12 +1,43 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="br.heitor.easyinvest.views.fragments.ContactFragment">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <br.heitor.easyinvest.views.widgets.FontTextInputLayout
+        android:id="@+id/groupTxtEmail"
+        style="@style/style_input_layout"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin">
 
-</FrameLayout>
+        <br.heitor.easyinvest.views.widgets.FontEditView
+            android:id="@+id/txtEmail"
+            style="@style/font_style.edt_text"
+            android:hint="Nome"
+            android:imeOptions="actionDone"
+            android:inputType="textEmailAddress"
+            android:text="José da Silva Oliveira" />
+    </br.heitor.easyinvest.views.widgets.FontTextInputLayout>
+
+    <br.heitor.easyinvest.views.widgets.FontCheckBoxView
+        android:id="@+id/btn_checkbox"
+        style="@style/font_style.checkbox"
+        android:layout_below="@+id/groupTxtEmail"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="Gostaria de cadastrar meu email" />
+
+    <br.heitor.easyinvest.views.widgets.FontButtonView
+        android:id="@+id/btnTest"
+        style="@style/button_style"
+        android:layout_below="@+id/btn_checkbox"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/action_send" />
+
+</RelativeLayout>

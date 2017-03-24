@@ -103,4 +103,15 @@ public class HomeBottomNavListener implements View.OnClickListener {
 
         transition.reverseTransition(0);
     }
+
+    public void updateByBackButton(View btnNavInvestment, View btnNavContact) {
+        if (selected == btnNavInvestment.getId()) {
+            selected = R.id.btnNavContact;
+            selectView(btnNavContact, 200);
+            return;
+        }
+
+        selected = R.id.btnNavInvestment;
+        selectView(btnNavInvestment, 200);
+    }
 }

@@ -1,46 +1,49 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <br.heitor.easyinvest.views.widgets.FontTextInputLayout
-        android:id="@+id/groupTxtEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <br.heitor.easyinvest.views.widgets.FontTextView
+        android:id="@+id/txt_title"
+        style="@style/font_style.title"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        app:errorTextAppearance="@style/textErrorLabel"
-        app:hintTextAppearance="@style/font_style.label">
+        android:gravity="center"
+        android:text="Investimento" />
 
-        <br.heitor.easyinvest.views.widgets.FontEditView
-            android:id="@+id/txtEmail"
-            style="@style/font_style.edt_text"
-            android:hint="Nome"
-            android:imeOptions="actionDone"
-            android:inputType="textEmailAddress"
-            android:text="José da Silva Oliveira" />
-    </br.heitor.easyinvest.views.widgets.FontTextInputLayout>
-
-    <br.heitor.easyinvest.views.widgets.FontCheckBoxView
-        android:id="@+id/btn_checkbox"
-        style="@style/font_style.checkbox"
-        android:layout_below="@+id/groupTxtEmail"
+    <br.heitor.easyinvest.views.widgets.FontTextView
+        android:id="@+id/txt_label_title"
+        style="@style/font_style.title_label"
+        android:layout_below="@+id/txt_title"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="Gostaria de cadastrar meu email" />
+        android:gravity="center"
+        android:text="Fundos de Investimento" />
 
-    <br.heitor.easyinvest.views.widgets.FontButtonView
-        android:id="@+id/btnTest"
-        style="@style/button_style"
-        android:layout_below="@+id/btn_checkbox"
-        android:layout_gravity="center"
+    <br.heitor.easyinvest.views.widgets.FontTextView
+        android:id="@+id/txt_title_investment_fund"
+        style="@style/font_style.title.big"
+        android:layout_below="@+id/txt_label_title"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="@string/action_send" />
+        android:gravity="center"
+        android:text="Vinci Valorem FI Multimercado" />
+
+    <br.heitor.easyinvest.views.widgets.FontTextView
+        android:id="@+id/txt_what_is"
+        style="@style/font_style.title_label"
+        android:layout_below="@+id/txt_title_investment_fund"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="O que é?" />
+
+    <br.heitor.easyinvest.views.widgets.FontTextView
+        android:id="@+id/txt_what_is_explanation"
+        style="@style/font_style"
+        android:layout_below="@+id/txt_what_is"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:text="O Fundo tem por objetivo proporcionar aos seus cotistas rentabilidade no longo prazo através de investimentos."
+        android:textColor="@color/grey_3" />
 </RelativeLayout>
