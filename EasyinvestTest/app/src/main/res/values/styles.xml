@@ -55,6 +55,12 @@
         <item name="android:textSize">@dimen/font_size_caption_2</item>
     </style>
 
+    <style name="font_style.title_label_2">
+        <item name="fontStyle">regular</item>
+        <item name="android:textColor">@color/medium_grey</item>
+        <item name="android:textSize">@dimen/font_size_caption_2</item>
+    </style>
+
     <style name="button_style" parent="Widget.AppCompat.Button.Borderless">
         <item name="fontFamily">DINPro</item>
         <item name="fontStyle">medium</item>
@@ -93,5 +99,17 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="errorTextAppearance">@style/textErrorLabel</item>
         <item name="hintTextAppearance">@style/font_style.label</item>
+    </style>
+
+    <style name="risk_style">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">6dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="view_separator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/medium_grey</item>
     </style>
 </resources>

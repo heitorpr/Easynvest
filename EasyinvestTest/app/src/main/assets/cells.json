@@ -39,7 +39,7 @@
 			"topSpacing": 35.0,
 			"show": null,
 			"required": true
-		}
+		},
 		{
 			"id": 5,
 			"type": 3,
@@ -57,7 +57,7 @@
 			"typefield": "telnumber",
 			"hidden": false,
 			"topSpacing": 10.0,
-			"show": null, 
+			"show": null,
 			"required": true
 		},
 		{
@@ -67,7 +67,7 @@
 			"typefield": null,
 			"hidden": false,
 			"topSpacing": 10.0,
-			"show": null, 
+			"show": null,
 			"required": true
 		}
 

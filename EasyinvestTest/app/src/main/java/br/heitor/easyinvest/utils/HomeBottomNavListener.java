@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 
 import br.heitor.easyinvest.R;
 import br.heitor.easyinvest.views.fragments.ContactFragment;
-import br.heitor.easyinvest.views.fragments.InvestimentFragment;
+import br.heitor.easyinvest.views.fragments.InvestmentFragment;
 
 public class HomeBottomNavListener implements View.OnClickListener {
     private FrameLayout content;
@@ -32,10 +32,10 @@ public class HomeBottomNavListener implements View.OnClickListener {
     @NonNull
     private static Fragment getFragment(Context ctx, int itemId, FragmentManager fm) {
         if (itemId == R.id.btnNavInvestment) {
-            Fragment fragment = fm.findFragmentByTag(FragmentNameHelper.getName(ctx, InvestimentFragment.class));
+            Fragment fragment = fm.findFragmentByTag(FragmentNameHelper.getName(ctx, InvestmentFragment.class));
 
             if (fragment == null) {
-                fragment = new InvestimentFragment();
+                fragment = new InvestmentFragment();
                 fragment.setArguments(new Bundle());
             }
 
@@ -59,7 +59,7 @@ public class HomeBottomNavListener implements View.OnClickListener {
         String name = FragmentNameHelper.getName(activity, fragment.getClass());
         fragment.setHasOptionsMenu(true);
 
-        ActivityUtils.moveFragment(fragment, fm, content.getId(), name);
+        ActivityUtils.moveFragment(fragment, fm, false, content.getId(), name, true);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class HomeBottomNavListener implements View.OnClickListener {
             Fragment fragment = getFragment(activity, v.getId(), fm);
             String name = FragmentNameHelper.getName(activity, fragment.getClass());
 
-            ActivityUtils.moveFragment(fragment, fm, content.getId(), name);
+            ActivityUtils.moveFragment(fragment, fm, false, content.getId(), name, true);
             selectView(v, 200);
             return;
         }
@@ -82,7 +82,7 @@ public class HomeBottomNavListener implements View.OnClickListener {
         Fragment fragment = getFragment(activity, v.getId(), fm);
         String name = FragmentNameHelper.getName(activity, fragment.getClass());
 
-        ActivityUtils.moveFragment(fragment, fm, content.getId(), name);
+        ActivityUtils.moveFragment(fragment, fm, false, content.getId(), name, true);
         selectView(v, 200);
     }
 

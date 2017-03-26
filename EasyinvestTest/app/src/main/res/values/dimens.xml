@@ -6,6 +6,8 @@
     <dimen name="button_min_height">50dp</dimen>
     <dimen name="button_min_width">315dp</dimen>
 
+    <dimen name="selected_bar_height">10dp</dimen>
+
     <dimen name="font_size_caption">11sp</dimen>
     <dimen name="font_size_caption_2">14sp</dimen>
     <dimen name="font_size_body">16sp</dimen>

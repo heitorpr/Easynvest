@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class MoreInfo {
     private MoreInfoObject month;
     private MoreInfoObject year;
+
     @SerializedName("12months")
     private MoreInfoObject allMonths;
 

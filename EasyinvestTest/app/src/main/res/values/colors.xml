@@ -18,13 +18,18 @@
     <color name="grey_3">#7D7D7D</color>
     <color name="dark_grey">#333333</color>
 
-
-
     <color name="red">#FF1F1F</color>
+    <color name="red_2">#FF3633</color>
 
+    <color name="light_green">#74D961</color>
     <color name="green">#65BD30</color>
+    <color name="green_2">#4AC06B</color>
+
 
     <color name="yellow">#F5A523</color>
+    <color name="yellow_2">#FFC010</color>
+
+    <color name="orange">#FF732C</color>
 
     <color name="color_font">@color/dark_grey</color>
     <color name="color_label">@color/medium_grey</color>

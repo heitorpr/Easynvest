@@ -14,4 +14,21 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_invest">Investir</string>
+    <string name="fund">Fundo</string>
+    <string name="cdi">CDI</string>
+    <string name="on_month">No mês</string>
+    <string name="on_year">No ano</string>
+    <string name="all_month">12 meses</string>
+    <string name="action_download">Baixar</string>
+    <string name="complete_name">Nome completo</string>
+    <string name="email">Email</string>
+    <string name="info_add_email_address">Gostaria de cadastrar meu email</string>
+    <string name="telephone">Telefone</string>
+    <string name="blank">Branco</string>
+    <string name="thank_you">Obrigado!</string>
+    <string name="info_message_sent_successfully">Mensagem enviada com sucesso :)</string>
+    <string name="send_new_message">Enviar nova mensagem</string>
+    <string name="error_fields">Verifique os campos digitados</string>
+    <string name="nodata_chart">Sem dados para visualizar</string>
 </resources>

@@ -7,17 +7,27 @@ import android.graphics.drawable.Drawable;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.util.Patterns;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.regex.Pattern;
 
 import br.heitor.easyinvest.R;
 import br.heitor.easyinvest.utils.FontManager;
+import br.heitor.easyinvest.utils.Utils;
 
 public class FontEditView extends TextInputEditText {
     boolean isUsingDrawable;
     int actionX, actionY;
     private Drawable drawableRight;
+    private boolean is_valid;
 
     public FontEditView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -49,6 +59,7 @@ public class FontEditView extends TextInputEditText {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 checkDrawableRight(s);
+
             }
 
             @Override
@@ -56,6 +67,74 @@ public class FontEditView extends TextInputEditText {
 
             }
         });
+
+        setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE || actionId == EditorInfo.IME_ACTION_NEXT
+                        || (event != null && event.getAction() == KeyEvent.ACTION_DOWN && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                    validateField();
+                }
+                return false;
+            }
+        });
+    }
+
+    private void validateField() {
+        String text = String.valueOf(getText());
+        int inputType = getInputType();
+        int flagText = (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES);
+        int flagEmail = (InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+        int flagTelephone = InputType.TYPE_CLASS_PHONE;
+
+        is_valid = false;
+
+        if (inputType == flagText) {
+            validateTextField(text);
+            return;
+        }
+
+        if (inputType == flagEmail) {
+            validateEmailField(text);
+            return;
+        }
+
+        if (inputType == flagTelephone) {
+            validateTelephone(text);
+            return;
+        }
+
+        setError(true);
+    }
+
+    private void validateTextField(String text) {
+        if (Utils.isEmptyOrNull(text)) {
+            setError(true);
+            return;
+        }
+
+        setSuccess(true);
+    }
+
+    private void validateEmailField(String text) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(text).matches()) {
+            setError(true);
+            return;
+        }
+
+        setSuccess(true);
+    }
+
+    private void validateTelephone(String text) {
+        String customPattern = "^[1-9]{2} [2-9][0-9]{3,4}\\-[0-9]{4}$";
+        Pattern sPattern = Pattern.compile(customPattern);
+
+        if (!sPattern.matcher(text).matches()) {
+            setError(true);
+            return;
+        }
+
+        setSuccess(true);
     }
 
     private void checkDrawableRight(CharSequence s) {
@@ -71,33 +150,47 @@ public class FontEditView extends TextInputEditText {
         }
     }
 
-    public void setError(boolean is_error) {
-        int pL = getPaddingLeft();
-        int pT = getPaddingTop();
-        int pR = getPaddingRight();
-        int pB = getPaddingBottom();
+    public boolean is_valid() {
+        return is_valid;
+    }
 
+    public void setError(boolean is_error) {
         if (is_error) {
+            int pL = getPaddingLeft();
+            int pT = getPaddingTop();
+            int pR = getPaddingRight();
+            int pB = getPaddingBottom();
+
             setBackground(ContextCompat.getDrawable(getContext(), R.drawable.edit_background_error));
             setPadding(pL, pT, pR, pB);
             return;
         }
 
-        setBackground(ContextCompat.getDrawable(getContext(), R.drawable.edit_background));
-        setPadding(pL, pT, pR, pB);
+        setDefault();
     }
 
     public void setSuccess(boolean is_success) {
+        if (is_success) {
+            int pL = getPaddingLeft();
+            int pT = getPaddingTop();
+            int pR = getPaddingRight();
+            int pB = getPaddingBottom();
+
+            is_valid = true;
+            setBackground(ContextCompat.getDrawable(getContext(), R.drawable.edit_background_success));
+            setPadding(pL, pT, pR, pB);
+            return;
+        }
+
+        setDefault();
+    }
+
+    private void setDefault() {
         int pL = getPaddingLeft();
         int pT = getPaddingTop();
         int pR = getPaddingRight();
         int pB = getPaddingBottom();
 
-        if (is_success) {
-            setBackground(ContextCompat.getDrawable(getContext(), R.drawable.edit_background_success));
-            setPadding(pL, pT, pR, pB);
-            return;
-        }
 
         setBackground(ContextCompat.getDrawable(getContext(), R.drawable.edit_background));
         setPadding(pL, pT, pR, pB);
@@ -162,6 +255,8 @@ public class FontEditView extends TextInputEditText {
         /* If drawble bounds contains the x and y points then move ahead.*/
         if (bounds.contains(x, y)) {
             setText("");
+            setDefault();
+
             event.setAction(MotionEvent.ACTION_CANCEL);
             return false;
         }

@@ -13,7 +13,7 @@ public class InvestmentScreenModel {
     private String infoTitle;
     private MoreInfo moreInfo;
     private ArrayList<Info> info;
-    private ArrayList<DownInfo> downInfo;
+    private ArrayList<Info> downInfo;
 
     public String getTitle() {
         return this.title;
@@ -95,11 +95,11 @@ public class InvestmentScreenModel {
         this.info = info;
     }
 
-    public ArrayList<DownInfo> getDownInfo() {
+    public ArrayList<Info> getDownInfo() {
         return this.downInfo;
     }
 
-    public void setDownInfo(ArrayList<DownInfo> downInfo) {
+    public void setDownInfo(ArrayList<Info> downInfo) {
         this.downInfo = downInfo;
     }
 }

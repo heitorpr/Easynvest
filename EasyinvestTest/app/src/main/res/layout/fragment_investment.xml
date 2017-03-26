@@ -1,0 +1,104 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+        <br.heitor.easyinvest.views.widgets.FontTextView
+            android:id="@+id/txt_title"
+            style="@style/font_style.title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:text="@string/investment" />
+
+        <br.heitor.easyinvest.views.widgets.FontTextView
+            android:id="@+id/txt_label_title"
+            style="@style/font_style.title_label"
+            android:layout_below="@+id/txt_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:gravity="center" />
+
+        <br.heitor.easyinvest.views.widgets.FontTextView
+            android:id="@+id/txt_title_investment_fund"
+            style="@style/font_style.title.big"
+            android:layout_below="@+id/txt_label_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:gravity="center" />
+
+        <br.heitor.easyinvest.views.widgets.FontTextView
+            android:id="@+id/txt_what_is"
+            style="@style/font_style.title_label"
+            android:layout_below="@+id/txt_title_investment_fund"
+            android:layout_centerHorizontal="true"
+            android:gravity="center" />
+
+        <br.heitor.easyinvest.views.widgets.FontTextView
+            android:id="@+id/txt_what_is_explanation"
+            style="@style/font_style"
+            android:layout_below="@+id/txt_what_is"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:textColor="@color/grey_3" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_below="@+id/txt_what_is_explanation"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:orientation="horizontal" />
+
+        <br.heitor.easyinvest.views.widgets.FontTextView
+            android:id="@+id/txt_title_risk"
+            style="@style/font_style.title"
+            android:layout_below="@+id/chart"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:textColor="@color/blue" />
+
+        <include
+            android:id="@+id/linear_risk"
+            layout="@layout/layout_risk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_title_risk"
+            android:layout_marginBottom="47dp" />
+
+        <br.heitor.easyinvest.views.widgets.FontTextView
+            android:id="@+id/txt_title_more_information"
+            style="@style/font_style.title"
+            android:layout_below="@+id/linear_risk"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:textColor="@color/blue" />
+
+        <include
+            android:id="@+id/linear_more_information"
+            layout="@layout/layout_table_more_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_title_more_information"
+            android:layout_marginBottom="@dimen/activity_vertical_margin" />
+
+        <br.heitor.easyinvest.views.widgets.FontButtonView
+            android:id="@+id/btn_invest"
+            style="@style/button_style"
+            android:layout_below="@+id/linear_more_information"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="45dp"
+            android:text="@string/action_invest" />
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

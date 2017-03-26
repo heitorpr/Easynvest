@@ -1,43 +1,90 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <br.heitor.easyinvest.views.widgets.FontTextInputLayout
-        android:id="@+id/groupTxtEmail"
-        style="@style/style_input_layout"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin">
+        android:layout_marginRight="@dimen/activity_horizontal_margin">
 
-        <br.heitor.easyinvest.views.widgets.FontEditView
-            android:id="@+id/txtEmail"
-            style="@style/font_style.edt_text"
-            android:hint="Nome"
-            android:imeOptions="actionDone"
-            android:inputType="textEmailAddress"
-            android:text="José da Silva Oliveira" />
-    </br.heitor.easyinvest.views.widgets.FontTextInputLayout>
+        <br.heitor.easyinvest.views.widgets.FontTextView
+            android:id="@+id/txt_title"
+            style="@style/font_style.title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:text="@string/contact" />
 
-    <br.heitor.easyinvest.views.widgets.FontCheckBoxView
-        android:id="@+id/btn_checkbox"
-        style="@style/font_style.checkbox"
-        android:layout_below="@+id/groupTxtEmail"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="Gostaria de cadastrar meu email" />
+        <br.heitor.easyinvest.views.widgets.FontTextInputLayout
+            android:id="@+id/inputLayout_name"
+            style="@style/style_input_layout"
+            android:layout_below="@+id/txt_title"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
 
-    <br.heitor.easyinvest.views.widgets.FontButtonView
-        android:id="@+id/btnTest"
-        style="@style/button_style"
-        android:layout_below="@+id/btn_checkbox"
-        android:layout_gravity="center"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="@string/action_send" />
+            <br.heitor.easyinvest.views.widgets.FontEditView
+                android:id="@+id/txt_name"
+                style="@style/font_style.edt_text"
+                android:hint="@string/complete_name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences" />
+        </br.heitor.easyinvest.views.widgets.FontTextInputLayout>
 
-</RelativeLayout>
+        <br.heitor.easyinvest.views.widgets.FontTextInputLayout
+            android:id="@+id/inputLayout_email"
+            style="@style/style_input_layout"
+            android:layout_below="@+id/inputLayout_name"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+            <br.heitor.easyinvest.views.widgets.FontEditView
+                android:id="@+id/txt_email"
+                style="@style/font_style.edt_text"
+                android:hint="@string/email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress" />
+        </br.heitor.easyinvest.views.widgets.FontTextInputLayout>
+
+        <br.heitor.easyinvest.views.widgets.FontTextInputLayout
+            android:id="@+id/inputLayout_telephone"
+            style="@style/style_input_layout"
+            android:layout_below="@+id/inputLayout_email"
+            android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+            <br.heitor.easyinvest.views.widgets.FontEditView
+                android:id="@+id/txt_telephone"
+                style="@style/font_style.edt_text"
+                android:hint="@string/telephone"
+                android:imeOptions="actionDone"
+                android:inputType="phone" />
+        </br.heitor.easyinvest.views.widgets.FontTextInputLayout>
+
+        <ImageView
+            android:id="@+id/img_blank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/inputLayout_telephone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:contentDescription="@string/blank"
+            android:src="@drawable/img_blank" />
+
+        <br.heitor.easyinvest.views.widgets.FontCheckBoxView
+            android:id="@+id/btn_checkbox"
+            style="@style/font_style.checkbox"
+            android:layout_below="@+id/img_blank"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/info_add_email_address" />
+
+        <br.heitor.easyinvest.views.widgets.FontButtonView
+            android:id="@+id/btn_send"
+            style="@style/button_style"
+            android:layout_below="@+id/btn_checkbox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="@string/action_send" />
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
