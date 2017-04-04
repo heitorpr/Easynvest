@@ -51,7 +51,7 @@
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:gravity="center"
             android:padding="10dp"
-            android:text="@string/send_new_message"
+            android:text="@string/action_send_new_message"
             android:textColor="@color/blue" />
     </LinearLayout>
 </LinearLayout>

@@ -84,6 +84,7 @@ public class InvestmentFragment extends BaseFragment {
         txtWhatIsExplanation.setText(investmentModel.getDefinition());
         txtTitleRisk.setText(investmentModel.getRiskTitle());
         txtTitleMoreInformation.setText(investmentModel.getInfoTitle());
+
         updateRisk();
         updateMoreInformation();
         updateChart();
@@ -108,12 +109,12 @@ public class InvestmentFragment extends BaseFragment {
         List<Float> fundArray = investmentModel.getGraphFund();
         List<Float> CDIArray = investmentModel.getGraphCDI();
 
-        for (float data : fundArray) {
-            entriesFund.add(new Entry(data, data));
+        for (int i = 0; i < fundArray.size(); i++) {
+            entriesFund.add(new Entry(i, fundArray.get(i)));
         }
 
-        for (float data : CDIArray) {
-            entriesCDI.add(new Entry(data, data));
+        for (int i = 0; i < CDIArray.size(); i++) {
+            entriesCDI.add(new Entry(i, CDIArray.get(i)));
         }
 
         LineDataSet dataSetFund = new LineDataSet(entriesFund, investmentModel.getFundName());

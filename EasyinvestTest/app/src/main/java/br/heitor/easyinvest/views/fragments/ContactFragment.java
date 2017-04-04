@@ -2,7 +2,6 @@ package br.heitor.easyinvest.views.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.view.LayoutInflater;
@@ -15,7 +14,6 @@ import br.heitor.easyinvest.R;
 import br.heitor.easyinvest.model.CellScreen;
 import br.heitor.easyinvest.utils.ActivityUtils;
 import br.heitor.easyinvest.utils.FragmentNameHelper;
-import br.heitor.easyinvest.utils.Utils;
 import br.heitor.easyinvest.views.widgets.FontButtonView;
 import br.heitor.easyinvest.views.widgets.FontCheckBoxView;
 import br.heitor.easyinvest.views.widgets.FontEditView;
@@ -70,6 +68,10 @@ public class ContactFragment extends BaseFragment {
     }
 
     private void setViews() {
+        txtTelephone.setText("");
+        txtName.setText("");
+        txtEmail.setText("");
+
         txtTelephone.addTextChangedListener(new PhoneNumberFormattingTextWatcher());
     }
 
