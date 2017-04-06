@@ -14,4 +14,11 @@
             <enum name="medium" value="4" />
         </attr>
     </declare-styleable>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="drawableLeftCompat" format="reference"/>
+        <attr name="drawableRightCompat" format="reference"/>
+        <attr name="drawableTopCompat" format="reference"/>
+        <attr name="drawableBottomCompat" format="reference"/>
+    </declare-styleable>
 </resources>

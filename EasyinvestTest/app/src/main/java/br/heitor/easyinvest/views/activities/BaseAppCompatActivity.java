@@ -3,6 +3,7 @@ package br.heitor.easyinvest.views.activities;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 
 import br.heitor.easyinvest.R;
 import br.heitor.easyinvest.utils.ActivityNameHelper;
@@ -19,6 +20,9 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ctx = this;
         TAG = ActivityNameHelper.getName(ctx, this);
+
+        //TODO - hey guys.. want to set DrawableRight? Use this =)
+        AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         FontManager.getInstance().initialize(this, R.xml.fonts);
     }
 

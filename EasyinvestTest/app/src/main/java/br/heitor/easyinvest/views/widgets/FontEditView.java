@@ -45,6 +45,10 @@ public class FontEditView extends TextInputEditText {
         // Set the typeface based on the family and the style combination.
         setTypeface(FontManager.getInstance().get(family, fontStyleEnum));
 
+        TypedArray drawableArr = context.obtainStyledAttributes(attrs, R.styleable.CustomTextView);
+        drawableRight = a.getDrawable(R.styleable.CustomTextView_drawableRightCompat);
+        drawableArr.recycle();
+
         addListener();
         checkDrawableRight(getText());
     }
